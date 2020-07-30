@@ -21,13 +21,10 @@ public class SpinnerSearch extends LinearLayout {
 
     private Context mContext;
     private AttributeSet mAttrs;
-
     private TextView textViewTitle;
     private EditText editTextSearch;
     private ImageView imageViewArrow;
     private RecyclerView recycleView;
-    private LinearLayout linearLayoutText;
-    private LinearLayout linearLayoutTextImageArrow;
 
 
 
@@ -38,6 +35,7 @@ public class SpinnerSearch extends LinearLayout {
         this.mAttrs = attrs;
 
         InitView();
+        bindView();
     }
 
 
@@ -47,13 +45,13 @@ public class SpinnerSearch extends LinearLayout {
         this.setOrientation(VERTICAL);
 
 
-        linearLayoutTextImageArrow = new LinearLayout(mContext, mAttrs);
+        LinearLayout linearLayoutTextImageArrow = new LinearLayout(mContext, mAttrs);
         linearLayoutTextImageArrow.setOrientation(HORIZONTAL);
         LayoutParams paramsLinearLayoutTextImageArrow = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         linearLayoutTextImageArrow.setLayoutParams(paramsLinearLayoutTextImageArrow);
         linearLayoutTextImageArrow.setGravity(Gravity.CENTER_VERTICAL);
 
-        linearLayoutText = new LinearLayout(mContext, mAttrs);
+        LinearLayout linearLayoutText = new LinearLayout(mContext, mAttrs);
         linearLayoutText.setOrientation(VERTICAL);
         LayoutParams paramsLinearText = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         paramsLinearText.weight = 8.0f;
@@ -106,31 +104,46 @@ public class SpinnerSearch extends LinearLayout {
     }
 
 
-
     private void bindView(){
-
         textViewTitle.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                expandsOrRetractView();
             }
         });
-
-
 
         imageViewArrow.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                expandsOrRetractView();
             }
         });
     }
 
 
-    private void expandsView(){
+    private void expandsOrRetractView(){
+        if (textViewTitle.getVisibility() == VISIBLE) {
+            imageViewArrow.setBackgroundResource(R.drawable.ic_arrow_up);
+            textViewTitle.setVisibility(GONE);
+            editTextSearch.setVisibility(VISIBLE);
+            recycleView.setVisibility(VISIBLE);
+        }
+        else{
+            imageViewArrow.setBackgroundResource(R.drawable.ic_arrow_down);
+            textViewTitle.setVisibility(VISIBLE);
+            editTextSearch.setVisibility(GONE);
+            recycleView.setVisibility(GONE);
+        }
+    }
 
+
+
+
+
+    private void setPopulateList(){
 
     }
+
 
 
 

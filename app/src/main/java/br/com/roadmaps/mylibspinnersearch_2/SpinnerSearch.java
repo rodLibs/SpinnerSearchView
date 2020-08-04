@@ -5,7 +5,10 @@ import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
@@ -14,7 +17,10 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.List;
 
 
 public class SpinnerSearch extends LinearLayout {
@@ -25,7 +31,8 @@ public class SpinnerSearch extends LinearLayout {
     private EditText editTextSearch;
     private ImageView imageViewArrow;
     private RecyclerView recycleView;
-
+    private AdapterSpinnerSearch adapter;
+    private OnItemClickSpinnerSearch listener;
 
 
 
@@ -118,6 +125,32 @@ public class SpinnerSearch extends LinearLayout {
                 expandsOrRetractView();
             }
         });
+
+        editTextSearch.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+            @Override
+            public void onTextChanged(CharSequence s, int i, int i1, int i2) {
+                if(adapter != null)
+                    adapter.getFilter().filter(s.toString());
+            }
+            @Override
+            public void afterTextChanged(Editable editable) {}
+        });
+
+        if(adapter != null) {
+            adapter.setListener(new OnItemClickSpinnerSearch() {
+                @Override
+                public void onItemClickSpinner(String iten, int position) {
+                    Log.i("ITEM", "SPINNER  " + iten + "  " + position);
+                    textViewTitle.setText(iten);
+                    expandsOrRetractView();
+                    if (listener != null) {
+                        listener.onItemClickSpinner(iten, position);
+                    }
+                }
+            });
+        }
     }
 
 
@@ -134,17 +167,24 @@ public class SpinnerSearch extends LinearLayout {
             editTextSearch.setVisibility(GONE);
             recycleView.setVisibility(GONE);
         }
+        editTextSearch.setText("");
     }
 
 
 
 
 
-    private void setPopulateList(){
-
+    public void setPopulateRecycleView(List<String> mListItens){
+        if (mListItens != null) {
+            adapter = new AdapterSpinnerSearch(mListItens, getContext());
+            recycleView.setLayoutManager(new LinearLayoutManager(getContext()));
+            recycleView.setAdapter(adapter);
+            bindView();
+        }
     }
 
 
-
-
+    public void setOnItemClickSpinner(OnItemClickSpinnerSearch listener){
+        this.listener = listener;
+    }
 }

@@ -8,6 +8,9 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.roadmaps.mylibspinnersearch_2.listener.OnItemClickSpinnerSearch;
+import br.com.roadmaps.mylibspinnersearch_2.test.AdapterTest;
+
 public class MainActivity extends AppCompatActivity implements OnItemClickSpinnerSearch {
 
     @Override
@@ -20,12 +23,14 @@ public class MainActivity extends AppCompatActivity implements OnItemClickSpinne
             list.add("Item "+i);
         }
         SpinnerSearch spinner = findViewById(R.id.spinnerSearch2);
-        spinner.setPopulateRecycleView(list);
+        spinner.setPopulateRecycleViewANDSetAdapter(new AdapterTest(list, this));
         spinner.setOnItemClickSpinner(this);
     }
 
+
+
     @Override
     public void onItemClickSpinner(String iten, int position) {
-        Log.i("ITEM", "ACTIVITY  "+iten +"  "+ position);
+        Log.i("ITEM", "ACTIVITY_NEW"+iten +"  "+ position);
     }
 }

@@ -1,4 +1,4 @@
-package br.com.roadmaps.mylibspinnersearch_2;
+package br.com.roadmaps.mylibspinnersearch_2.adapter;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -6,22 +6,24 @@ import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.TextView;
 
-import androidx.recyclerview.widget.RecyclerView;
+import androidx.annotation.NonNull;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import br.com.roadmaps.mylibspinnersearch_2.R;
+import br.com.roadmaps.mylibspinnersearch_2.listener.OnItemClickSpinnerSearch;
 
 /**
  * Created by rodd on 03/08/2020.
  */
 
 
-public class AdapterSpinnerSearch extends RecyclerView.Adapter<AdapterSpinnerSearch.ViewHolder> implements Filterable{
+public class AdapterSpinnerSearch extends BaseAdapter implements Filterable{
 
     private List<String> listOrigi;
     private List<String> listFiltered;
@@ -47,27 +49,21 @@ public class AdapterSpinnerSearch extends RecyclerView.Adapter<AdapterSpinnerSea
 
 
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = inflater.inflate(R.layout.adapter_spinner_search, parent, false);
-        return new ViewHolder(view);
+        return new MyViewHolder(view);
     }
 
+
     @Override
-    public void onBindViewHolder(ViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull BaseViewHolder holder, final int position) {
         final String item = listFiltered.get(position);
-        holder.myTextView.setText(item);
-        holder.myTextView.setTypeface(typefaceItem);
-        holder.myTextView.setTextSize(sizeFontItem);
-        holder.myTextView.setTextColor(colorItem);
-        holder.myTextView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (listener != null){
-                    listener.onItemClickSpinner(item, position);
-                }
-            }
-        });
+        if (holder instanceof MyViewHolder){
+            holder.bind(item);
+        }
     }
+
+
 
     @Override
     public int getItemCount() {
@@ -88,21 +84,41 @@ public class AdapterSpinnerSearch extends RecyclerView.Adapter<AdapterSpinnerSea
     public void setTypefaceItem(Typeface type){
         typefaceItem = type;
     }
-    public void setListener(OnItemClickSpinnerSearch listener){
-        this.listener = listener;
-    }
+
 
     @Override
     public long getItemId(int position) {
         return position;
     }
 
+    @Override
+    public void setListener(OnItemClickSpinnerSearch listener) {
+        this.listener = listener;
+    }
 
-    class ViewHolder extends RecyclerView.ViewHolder {
+
+
+    class MyViewHolder extends BaseViewHolder<String> {
         TextView myTextView;
-        ViewHolder(View itemView) {
+        MyViewHolder(View itemView) {
             super(itemView);
             myTextView = itemView.findViewById(R.id.txtItem);
+        }
+
+        @Override
+        public void bind(final String item) {
+            myTextView.setText(item);
+            myTextView.setTypeface(typefaceItem);
+            myTextView.setTextSize(sizeFontItem);
+            myTextView.setTextColor(colorItem);
+            myTextView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (listener != null){
+                        listener.onItemClickSpinner(item, getAdapterPosition());
+                    }
+                }
+            });
         }
     }
 
@@ -113,7 +129,6 @@ public class AdapterSpinnerSearch extends RecyclerView.Adapter<AdapterSpinnerSea
     }
 
     public class ItemFilter extends Filter {
-
         @Override
         protected FilterResults performFiltering(CharSequence constraint) {
             String filterString = constraint.toString().toLowerCase();

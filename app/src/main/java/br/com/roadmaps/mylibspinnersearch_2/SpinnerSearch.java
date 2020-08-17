@@ -22,6 +22,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
+import br.com.roadmaps.mylibspinnersearch_2.adapter.AdapterSpinnerSearch;
+import br.com.roadmaps.mylibspinnersearch_2.adapter.BaseAdapter;
+import br.com.roadmaps.mylibspinnersearch_2.listener.OnItemClickSpinnerSearch;
+
 
 public class SpinnerSearch extends LinearLayout {
 
@@ -31,7 +35,7 @@ public class SpinnerSearch extends LinearLayout {
     private EditText editTextSearch;
     private ImageView imageViewArrow;
     private RecyclerView recycleView;
-    private AdapterSpinnerSearch adapter;
+    private BaseAdapter adapter;
     private OnItemClickSpinnerSearch listener;
 
 
@@ -172,11 +176,20 @@ public class SpinnerSearch extends LinearLayout {
 
 
 
-
-
     public void setPopulateRecycleView(List<String> mListItens){
         if (mListItens != null) {
             adapter = new AdapterSpinnerSearch(mListItens, getContext());
+            recycleView.setLayoutManager(new LinearLayoutManager(getContext()));
+            recycleView.setAdapter(adapter);
+            bindView();
+        }
+    }
+
+
+
+    public void setPopulateRecycleViewANDSetAdapter(BaseAdapter mAdapter){
+        if (mAdapter != null) {
+            adapter = mAdapter;
             recycleView.setLayoutManager(new LinearLayoutManager(getContext()));
             recycleView.setAdapter(adapter);
             bindView();

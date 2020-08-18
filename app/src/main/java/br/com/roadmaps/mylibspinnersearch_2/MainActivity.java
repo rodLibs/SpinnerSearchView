@@ -2,6 +2,8 @@ package br.com.roadmaps.mylibspinnersearch_2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -28,9 +30,12 @@ public class MainActivity extends AppCompatActivity implements OnItemClickSpinne
     }
 
 
-
     @Override
     public void onItemClickSpinner(String iten, int position) {
         Log.i("ITEM", "ACTIVITY_NEW"+iten +"  "+ position);
     }
 }
+
+
+
+// 20200837001 protocolo bbg

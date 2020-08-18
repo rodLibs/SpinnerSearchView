@@ -3,7 +3,9 @@ package br.com.roadmaps.mylibspinnersearch_2;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.Resources;
+import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -48,7 +50,6 @@ public class SpinnerSearch extends LinearLayout {
         InitView();
         bindView();
     }
-
 
 
     private void InitView(){
@@ -146,7 +147,6 @@ public class SpinnerSearch extends LinearLayout {
             adapter.setListener(new OnItemClickSpinnerSearch() {
                 @Override
                 public void onItemClickSpinner(String iten, int position) {
-                    Log.i("ITEM", "SPINNER  " + iten + "  " + position);
                     textViewTitle.setText(iten);
                     expandsOrRetractView();
                     if (listener != null) {
@@ -176,6 +176,7 @@ public class SpinnerSearch extends LinearLayout {
 
 
 
+
     public void setPopulateRecycleView(List<String> mListItens){
         if (mListItens != null) {
             adapter = new AdapterSpinnerSearch(mListItens, getContext());
@@ -184,7 +185,6 @@ public class SpinnerSearch extends LinearLayout {
             bindView();
         }
     }
-
 
 
     public void setPopulateRecycleViewANDSetAdapter(BaseAdapter mAdapter){
@@ -199,5 +199,71 @@ public class SpinnerSearch extends LinearLayout {
 
     public void setOnItemClickSpinner(OnItemClickSpinnerSearch listener){
         this.listener = listener;
+    }
+
+
+    /**
+     * @Method for changing the TextView component
+     * The font, color, background, text can be changed.
+     */
+    public void setTextTextView(String text){
+        textViewTitle.setText(text);
+    }
+    public void setTypeFaceTextView(Typeface face){
+        textViewTitle.setTypeface(face);
+    }
+    public void setColorTextView(int color){
+        textViewTitle.setTextColor(color);
+    }
+    public void setSizeTextView(int size){
+        textViewTitle.setTextSize(TypedValue.COMPLEX_UNIT_SP, size);
+    }
+    public void setBackgroundColorTextView(int color){
+        textViewTitle.setBackgroundColor(color);
+    }
+    public void setBackgroundResourceTextView(int res){
+        textViewTitle.setBackgroundResource(res);
+    }
+
+
+    /**
+     * @Method for changing the EditText component
+     * The font, color, background, text can be changed.
+     */
+    public void setTextHintEditText(String hint){
+        editTextSearch.setHint(hint);
+    }
+    public void setTypeFaceEditText(Typeface face){
+        editTextSearch.setTypeface(face);
+    }
+    public void setColorEditText(int color){
+        editTextSearch.setTextColor(color);
+    }
+    public void setColorHintEditText(int color){
+        editTextSearch.setHintTextColor(color);
+    }
+    public void setSizeEditText(int size){
+        editTextSearch.setTextSize(TypedValue.COMPLEX_UNIT_SP, size);
+    }
+    public void setBackgroundColorEditText(int color){
+        editTextSearch.setBackgroundColor(color);
+    }
+    public void setBackgroundResourceEditText(int res){
+        editTextSearch.setBackgroundResource(res);
+    }
+    public void setBackgroundTintListEditText(ColorStateList colorStateList){
+        editTextSearch.setBackgroundTintList(colorStateList);
+    }
+
+
+    /**
+     * @Method for changing the ImageView component
+     * The image can be changed
+     */
+    public void setImageResourceImageView(int res){
+        imageViewArrow.setImageResource(res);
+    }
+    public void setBitmapImageView(Bitmap bitmap){
+        imageViewArrow.setImageBitmap(bitmap);
     }
 }

@@ -1,5 +1,4 @@
 package br.com.roadmaps.mylibspinnersearch_2;
-
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.Resources;
@@ -18,12 +17,9 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import java.util.List;
-
 import br.com.roadmaps.mylibspinnersearch_2.adapter.AdapterSpinnerSearch;
 import br.com.roadmaps.mylibspinnersearch_2.adapter.BaseAdapter;
 import br.com.roadmaps.mylibspinnersearch_2.listener.OnItemClickSpinnerSearch;
@@ -41,7 +37,6 @@ public class SpinnerSearch extends LinearLayout {
     private OnItemClickSpinnerSearch listener;
 
 
-
     public SpinnerSearch(Context context, AttributeSet attrs) {
         super(context, attrs);
         this.mContext = context;
@@ -52,6 +47,11 @@ public class SpinnerSearch extends LinearLayout {
     }
 
 
+    /**
+     * @Method that initializes all components,
+     * TextView, EditText, ImageView, RecycleView,
+     * setting their default values.
+     */
     private void InitView(){
         this.setBackgroundColor(Color.WHITE);
         this.setOrientation(VERTICAL);
@@ -116,6 +116,16 @@ public class SpinnerSearch extends LinearLayout {
     }
 
 
+    /**
+     * @Method that has all the events(listeners) of the components used.
+     *
+     * TextView and ImageView listener, to open and close the component.
+     * EditText listener, for the filter on the RecycleView adapter.
+     *
+     * RecycleView adapter listener.
+     * This listener is used to close the component when an item in the list
+     * is chosen and pass this listener on to user activity.
+     */
     private void bindView(){
         textViewTitle.setOnClickListener(new OnClickListener() {
             @Override
@@ -158,14 +168,16 @@ public class SpinnerSearch extends LinearLayout {
     }
 
 
+    /**
+     * @Method responsible for opening and closing the component.
+     */
     private void expandsOrRetractView(){
         if (textViewTitle.getVisibility() == VISIBLE) {
             imageViewArrow.setBackgroundResource(R.drawable.ic_arrow_up);
             textViewTitle.setVisibility(GONE);
             editTextSearch.setVisibility(VISIBLE);
             recycleView.setVisibility(VISIBLE);
-        }
-        else{
+        } else{
             imageViewArrow.setBackgroundResource(R.drawable.ic_arrow_down);
             textViewTitle.setVisibility(VISIBLE);
             editTextSearch.setVisibility(GONE);
@@ -176,7 +188,12 @@ public class SpinnerSearch extends LinearLayout {
 
 
 
-
+    /**
+     * @Method responsible for filling the RecycleView.
+     *
+     * You will receive a list of String,
+     * create the adapter and set the adapter in the recycleView.
+     */
     public void setPopulateRecycleView(List<String> mListItens){
         if (mListItens != null) {
             adapter = new AdapterSpinnerSearch(mListItens, getContext());
@@ -187,6 +204,13 @@ public class SpinnerSearch extends LinearLayout {
     }
 
 
+    /**
+     * @Method responsible for filling the RecycleView, with the user's adapter.
+     * You will receive an adapter that must extend from the BaseAdapter Class
+     * and implement the methods of the Filterable interface,
+     * and implement the Listener for the OnItemClickSpinnerSearch interface.
+     * This adapter will be set in RecycleView.
+     */
     public void setPopulateRecycleViewANDSetAdapter(BaseAdapter mAdapter){
         if (mAdapter != null) {
             adapter = mAdapter;
@@ -197,9 +221,13 @@ public class SpinnerSearch extends LinearLayout {
     }
 
 
+    /**
+     * @Method responsible for sending the adapter's click listener to the user's activity.
+     */
     public void setOnItemClickSpinner(OnItemClickSpinnerSearch listener){
         this.listener = listener;
     }
+
 
 
     /**

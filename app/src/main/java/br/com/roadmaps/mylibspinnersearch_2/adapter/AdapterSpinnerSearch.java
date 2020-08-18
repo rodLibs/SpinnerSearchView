@@ -20,10 +20,11 @@ import br.com.roadmaps.mylibspinnersearch_2.listener.OnItemClickSpinnerSearch;
 
 /**
  * Created by rodd on 03/08/2020.
+ *
+ * @Class Default adapter used by the component.
+ * Extends the BaseAdapter class.
  */
-
-
-public class AdapterSpinnerSearch extends BaseAdapter implements Filterable{
+public class AdapterSpinnerSearch extends BaseAdapter{
 
     private List<String> listOrigi;
     private List<String> listFiltered;
@@ -74,18 +75,6 @@ public class AdapterSpinnerSearch extends BaseAdapter implements Filterable{
         }
     }
 
-
-    public void setSizeFontItem(float size){
-        sizeFontItem = size;
-    }
-    public void setColorItem(int color){
-        colorItem = color;
-    }
-    public void setTypefaceItem(Typeface type){
-        typefaceItem = type;
-    }
-
-
     @Override
     public long getItemId(int position) {
         return position;
@@ -121,7 +110,6 @@ public class AdapterSpinnerSearch extends BaseAdapter implements Filterable{
             });
         }
     }
-
 
     @Override
     public ItemFilter getFilter() {

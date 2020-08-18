@@ -1,4 +1,5 @@
 package br.com.roadmaps.mylibspinnersearch_2;
+
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.Resources;
@@ -9,7 +10,6 @@ import android.graphics.drawable.Drawable;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
@@ -295,3 +295,14 @@ public class SpinnerSearch extends LinearLayout {
         imageViewArrow.setImageBitmap(bitmap);
     }
 }
+
+/*
+ <br.com.roadmaps.mylibspinnersearch_2.SpinnerSearch
+        android:id="@+id/spinnerSearch2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp">
+    </br.com.roadmaps.mylibspinnersearch_2.SpinnerSearch>
+ */

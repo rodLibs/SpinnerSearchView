@@ -7,6 +7,7 @@ import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
@@ -59,13 +60,13 @@ public class SpinnerSearch extends LinearLayout {
 
         LinearLayout linearLayoutTextImageArrow = new LinearLayout(mContext, mAttrs);
         linearLayoutTextImageArrow.setOrientation(HORIZONTAL);
-        LayoutParams paramsLinearLayoutTextImageArrow = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+        LayoutParams paramsLinearLayoutTextImageArrow = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
         linearLayoutTextImageArrow.setLayoutParams(paramsLinearLayoutTextImageArrow);
         linearLayoutTextImageArrow.setGravity(Gravity.CENTER_VERTICAL);
 
         LinearLayout linearLayoutText = new LinearLayout(mContext, mAttrs);
         linearLayoutText.setOrientation(VERTICAL);
-        LayoutParams paramsLinearText = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+        LayoutParams paramsLinearText = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
         paramsLinearText.weight = 8.0f;
         linearLayoutText.setLayoutParams(paramsLinearText);
 
@@ -83,8 +84,12 @@ public class SpinnerSearch extends LinearLayout {
         editTextSearch.setTextSize(TypedValue.COMPLEX_UNIT_SP,14);
         editTextSearch.setSingleLine(true);
         editTextSearch.setPadding(10,40,16,40);
-        ColorStateList colorStateList = ColorStateList.valueOf(Color.TRANSPARENT);
-        editTextSearch.setBackgroundTintList(colorStateList);
+
+        //TODO: lançar exeções
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            ColorStateList colorStateList = ColorStateList.valueOf(Color.TRANSPARENT);
+            editTextSearch.setBackgroundTintList(colorStateList);
+        }
         Drawable img;
         Resources res = getResources();
         img = res.getDrawable(android.R.drawable.ic_menu_search);
@@ -95,14 +100,14 @@ public class SpinnerSearch extends LinearLayout {
 
         imageViewArrow = new ImageView(mContext, mAttrs);
         imageViewArrow.setBackgroundResource(R.drawable.ic_arrow_down);
-        LayoutParams paramsImageView = new LinearLayout.LayoutParams(60, 60);
+        LayoutParams paramsImageView = new LayoutParams(60, 60);
         paramsImageView.rightMargin = 30;
         paramsImageView.leftMargin = 20;
         paramsImageView.weight = 0.0f;
         imageViewArrow.setLayoutParams(paramsImageView);
 
         recycleView = new RecyclerView(mContext, mAttrs);
-        LayoutParams paramsRecycle = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, 500);
+        LayoutParams paramsRecycle = new LayoutParams(LayoutParams.MATCH_PARENT, 500);
         recycleView.setLayoutParams(paramsRecycle);
         recycleView.setVisibility(GONE);
 
@@ -280,7 +285,9 @@ public class SpinnerSearch extends LinearLayout {
         editTextSearch.setBackgroundResource(res);
     }
     public void setBackgroundTintListEditText(ColorStateList colorStateList){
-        editTextSearch.setBackgroundTintList(colorStateList);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            editTextSearch.setBackgroundTintList(colorStateList);
+        }
     }
 
 

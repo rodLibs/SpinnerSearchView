@@ -102,6 +102,7 @@ spinner.setOnItemClickSpinner { item, _ ->
 
 
 # Api Methods
+###### TextView
 <pre><code>
   setTextTextView(String text)  -->> set text Title.
 </code></pre>
@@ -126,6 +127,7 @@ spinner.setOnItemClickSpinner { item, _ ->
   setBackgroundResourceTextView(int res)  -->> set BackgroundResource text Title
 </code></pre>
 
+###### EditText
 <pre><code>
   setTextHintEditText(String hint)  -->> set text hint camp search
 </code></pre>
@@ -158,6 +160,7 @@ spinner.setOnItemClickSpinner { item, _ ->
   setBackgroundTintListEditText(ColorStateList colorStateList)  -->> set backgroundTintList camp search
 </code></pre>
 
+###### ImageView
 <pre><code>
   setImageResourceImageView(int res)  -->> set ImageResource ImageView
 </code></pre>

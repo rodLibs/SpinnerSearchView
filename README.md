@@ -13,6 +13,13 @@ Require compileSdkVersion 29.
 </br>
 
 
+
+# Sample Project
+You can download the latest sample APK from this repo here: https://github.com/rodLibs/cam-color/blob/master/sample/cam%20color.apk
+</br>
+</br>
+
+
 # Gradle Dependency
 
 ## Repository
@@ -77,22 +84,18 @@ repositories {
     list.add("item $i")
  }
  
- val spinner = findViewById<SpinnerSearch>(R.id.spinner) 
+ val spinner = findViewById```<SpinnerSearch>```(R.id.spinner) 
  spinner.setPopulateRecycleView(list)
 </code></pre>
 
 
 
-
-
-
-
-
-
-
-
-
-
+###### Add component click event
+<pre><code>
+spinner.setOnItemClickSpinner { item, _ ->
+    Log.i("SPINNER", item)
+}
+</code></pre>
 
 
 

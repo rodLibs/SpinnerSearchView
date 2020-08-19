@@ -54,6 +54,20 @@ repositories {
 
 # Sample usage
 
+#### .XML
+
+###### Add the component to your .xml file
+<pre><code>
+ <com.github.rodlibs.mylibspinnersearch_2.SpinnerSearch
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"/>
+</code></pre>
+
+
 #### .kt
 
 ###### Create a string list, get the component instance in the xml.

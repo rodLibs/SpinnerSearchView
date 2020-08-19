@@ -52,6 +52,20 @@ repositories {
 
 
 
+# Sample usage
+
+#### .kt
+
+###### Create a string list, get the component instance in the xml.
+<pre><code>
+ val list = arrayListOf<String>()
+ for (i in 1..20) {
+    list.add("item $i")
+ }
+ 
+ val spinner = findViewById<SpinnerSearch>(R.id.spinner) 
+ spinner.setPopulateRecycleView(list)
+</code></pre>
 
 
 

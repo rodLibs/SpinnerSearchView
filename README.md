@@ -41,7 +41,7 @@ repositories {
 
 #### Gradle:
 <pre><code>
-    implementation 'com.github.rodlibs:spinnerSearch2:1.2'
+    implementation 'com.github.rodlibs:spinnerSearch2:1.3'
 </code></pre>
 
 
@@ -50,7 +50,7 @@ repositories {
  <dependency>
   <groupId>com.github.rodlibs</groupId>
   <artifactId>spinnerSearch2</artifactId>
-  <version>1.2</version>
+  <version>1.3</version>
   <type>pom</type>
 </dependency>
 ```
@@ -84,7 +84,7 @@ repositories {
     list.add("item $i")
  }
  
- val spinner = findViewById```<SpinnerSearch>```(R.id.spinner) 
+ val spinner = findViewById<SpinnerSearch>(R.id.spinner) 
  spinner.setPopulateRecycleView(list)
 </code></pre>
 
@@ -96,6 +96,81 @@ spinner.setOnItemClickSpinner { item, _ ->
     Log.i("SPINNER", item)
 }
 </code></pre>
+</br>
+</br>
+
+
+
+# Api Methods
+<pre><code>
+  setTextTextView(String text)  -->> set text Title.
+</code></pre>
+
+<pre><code>
+  setTypeFaceTextView(Typeface face)  -->> set Font Title
+</code></pre>
+
+<pre><code>
+  setColorTextView(int color)  -->> set color text Title
+</code></pre>
+
+<pre><code>
+  setSizeTextView(int size)  -->> set size text Title
+</code></pre>
+
+<pre><code>
+  setBackgroundColorTextView(int color)  -->> set Backgroundcolor text Title
+</code></pre>
+
+<pre><code>
+  setBackgroundResourceTextView(int res)  -->> set BackgroundResource text Title
+</code></pre>
+
+<pre><code>
+  setTextHintEditText(String hint)  -->> set text hint camp search
+</code></pre>
+
+<pre><code>
+  setTypeFaceEditText(Typeface face)  -->> set font camp search
+</code></pre>
+
+<pre><code>
+  setColorEditText(int color)  -->> set color text camp search
+</code></pre>
+
+<pre><code>
+  setColorHintEditText(int color)  -->> set color hint camp search
+</code></pre>
+
+<pre><code>
+  setSizeEditText(int size)  -->> set size font camp search
+</code></pre>
+
+<pre><code>
+  setBackgroundColorEditText(int color)  -->> set backgroundColor camp search
+</code></pre>
+
+<pre><code>
+  setBackgroundResourceEditText(int res)  -->> set backgroundResource camp search
+</code></pre>
+
+<pre><code>
+  setBackgroundTintListEditText(ColorStateList colorStateList)  -->> set backgroundTintList camp search
+</code></pre>
+
+<pre><code>
+  setImageResourceImageView(int res)  -->> set ImageResource ImageView
+</code></pre>
+
+<pre><code>
+  setBitmapImageView(Bitmap bitmap)  -->> set ImageBitmap ImageView
+</code></pre>
+</br>
+</br>
+
+
+
+
 
 
 

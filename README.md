@@ -1,5 +1,5 @@
 # SpinnerSearchView
-library doing research in spinner.
+Library that performs search on the spinner.
 </br>
 </br>
 
@@ -7,6 +7,7 @@ library doing research in spinner.
 
 # Requirements
 SpinnerSearchView requires at minimum Android 4.0 (API level 15).
+</br>
 Require compileSdkVersion 29.
 </br>
 </br>

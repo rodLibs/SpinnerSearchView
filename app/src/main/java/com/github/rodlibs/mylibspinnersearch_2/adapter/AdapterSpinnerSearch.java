@@ -1,4 +1,4 @@
-package br.com.roadmaps.mylibspinnersearch_2.adapter;
+package com.github.rodlibs.mylibspinnersearch_2.adapter;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Filter;
-import android.widget.Filterable;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,8 +14,8 @@ import androidx.annotation.NonNull;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.roadmaps.mylibspinnersearch_2.R;
-import br.com.roadmaps.mylibspinnersearch_2.listener.OnItemClickSpinnerSearch;
+import com.github.rodlibs.mylibspinnersearch_2.R;
+import com.github.rodlibs.mylibspinnersearch_2.listener.OnItemClickSpinnerSearch;
 
 /**
  * Created by rodd on 03/08/2020.

@@ -1,4 +1,4 @@
-package br.com.roadmaps.mylibspinnersearch_2;
+package com.github.rodlibs.mylibspinnersearch_2;
 
 import android.content.Context;
 import android.content.res.ColorStateList;
@@ -21,9 +21,9 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
-import br.com.roadmaps.mylibspinnersearch_2.adapter.AdapterSpinnerSearch;
-import br.com.roadmaps.mylibspinnersearch_2.adapter.BaseAdapter;
-import br.com.roadmaps.mylibspinnersearch_2.listener.OnItemClickSpinnerSearch;
+import com.github.rodlibs.mylibspinnersearch_2.adapter.AdapterSpinnerSearch;
+import com.github.rodlibs.mylibspinnersearch_2.adapter.BaseAdapter;
+import com.github.rodlibs.mylibspinnersearch_2.listener.OnItemClickSpinnerSearch;
 
 
 public class SpinnerSearch extends LinearLayout {
@@ -205,6 +205,8 @@ public class SpinnerSearch extends LinearLayout {
             recycleView.setLayoutManager(new LinearLayoutManager(getContext()));
             recycleView.setAdapter(adapter);
             bindView();
+        }else {
+            throw new NullPointerException("List cannot be null");
         }
     }
 
@@ -302,14 +304,3 @@ public class SpinnerSearch extends LinearLayout {
         imageViewArrow.setImageBitmap(bitmap);
     }
 }
-
-/*
- <br.com.roadmaps.mylibspinnersearch_2.SpinnerSearch
-        android:id="@+id/spinnerSearch2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp">
-    </br.com.roadmaps.mylibspinnersearch_2.SpinnerSearch>
- */

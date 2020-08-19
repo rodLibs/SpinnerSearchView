@@ -1,4 +1,4 @@
-package br.com.roadmaps.mylibspinnersearch_2.adapter;
+package com.github.rodlibs.mylibspinnersearch_2.adapter;
 
 import android.view.View;
 import androidx.annotation.NonNull;

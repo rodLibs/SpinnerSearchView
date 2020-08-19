@@ -57,7 +57,7 @@ repositories {
 #### .XML
 
 ###### Add the component to your .xml file
-<pre><code>
+```xml
  <com.github.rodlibs.mylibspinnersearch_2.SpinnerSearch
         android:id="@+id/spinner"
         android:layout_width="match_parent"
@@ -65,7 +65,7 @@ repositories {
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"/>
-</code></pre>
+```
 
 
 #### .kt

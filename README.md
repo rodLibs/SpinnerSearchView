@@ -97,15 +97,17 @@ spinner.setOnItemClickSpinner { item, _ ->
 }
 </code></pre>
 </br>
-</br>
 
 
 
 ###### To add a custom adapter, your adapter must extend from BaseAdapter's own library.
 ###### You must implement the ItemFilter class, for correct filtering to work.
-###### You should call the setListener method, from your activity, through the adapter instance.
+###### You should call the setListener method, from your activity, through the spinner instance.
 <pre><code>
 class AdapterCustomized(private val listOrigi: List<String>) : BaseAdapter() {
+
+    val mFilter: ItemFilter = ItemFilter()
+    var myListener: OnItemClickSpinnerSearch? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<Any> {}
 
@@ -123,12 +125,14 @@ class AdapterCustomized(private val listOrigi: List<String>) : BaseAdapter() {
     inner class ItemFilter : Filter(){}
 }
 </code></pre>
+
+
+###### To use the custom adapter, call the method: setPopulateRecycleViewANDSetAdapter
+<pre><code>
+    spinner.setPopulateRecycleViewANDSetAdapter(AdapterCustomized(list))
+</code></pre>
 </br>
 </br>
-
-
-
-
 
 
 
@@ -202,11 +206,6 @@ class AdapterCustomized(private val listOrigi: List<String>) : BaseAdapter() {
 </code></pre>
 </br>
 </br>
-
-
-
-
-
 
 
 

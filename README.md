@@ -101,6 +101,38 @@ spinner.setOnItemClickSpinner { item, _ ->
 
 
 
+###### To add a custom adapter, your adapter must extend from BaseAdapter's own library.
+###### You must implement the ItemFilter class, for correct filtering to work.
+###### You should call the setListener method, from your activity, through the adapter instance.
+<pre><code>
+class AdapterCustomized(private val listOrigi: List<String>) : BaseAdapter() {
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<Any> {}
+
+    override fun onBindViewHolder(holder: BaseViewHolder<*>, position: Int) {}
+
+    override fun getItemCount(): Int {}
+
+    override fun setListener(listener: OnItemClickSpinnerSearch?) {}
+
+    inner class MyViewHolder(itemView: View) : BaseViewHolder<String>(itemView){}
+
+
+    override fun getFilter(): Filter {}
+
+    inner class ItemFilter : Filter(){}
+}
+</code></pre>
+</br>
+</br>
+
+
+
+
+
+
+
+
 # Api Methods
 ###### TextView
 <pre><code>

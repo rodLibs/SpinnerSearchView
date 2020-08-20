@@ -224,6 +224,8 @@ public class SpinnerSearch extends LinearLayout {
             recycleView.setLayoutManager(new LinearLayoutManager(getContext()));
             recycleView.setAdapter(adapter);
             bindView();
+        }else {
+            throw new NullPointerException("Adapter cannot be null");
         }
     }
 

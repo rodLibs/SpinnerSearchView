@@ -1,4 +1,4 @@
-<img src="image1.png" height="300" width="400"> 
+<img src="image1.png" height="260" width="400"> 
 
 <img src="image2.png" height="300" width="400">
 

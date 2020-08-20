@@ -1,3 +1,7 @@
+<img src="image1.png" height="200" width="300">  <img src="image2.png" height="250" width="350">
+
+
+
 # SpinnerSearchView
 Library that performs search on the spinner.
 This library is 100% written in Java.

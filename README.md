@@ -1,6 +1,6 @@
-<img src="image1.png" height="240" width="400"> 
+<img src="image1.png" height="220" width="400"> 
 
-<img src="image2.png" height="300" width="420">
+<img src="image2.png" height="300" width="450">
 
 
 

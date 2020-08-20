@@ -17,7 +17,7 @@ Require compileSdkVersion 29.
 
 
 # Sample Project
-You can download the latest sample APK from this repo here: https://github.com/rodLibs/cam-color/blob/master/sample/cam%20color.apk
+You can download the latest sample code from this repo here: https://github.com/rodLibs/SpinnerSearchView/tree/master/sample_code
 </br>
 </br>
 

@@ -1,5 +1,7 @@
 # SpinnerSearchView
 Library that performs search on the spinner.
+This library is 100% written in Java.
+But it can be used for java or kotlin.
 </br>
 </br>
 
@@ -99,7 +101,6 @@ spinner.setOnItemClickSpinner { item, _ ->
 </br>
 
 
-
 ###### To add a custom adapter, your adapter must extend from BaseAdapter's own library.
 ###### You must implement the ItemFilter class, for correct filtering to work.
 ###### You should call the setListener method, from your activity, through the spinner instance.
@@ -129,7 +130,7 @@ class AdapterCustomized(private val listOrigi: List<String>) : BaseAdapter() {
 
 ###### To use the custom adapter, call the method: setPopulateRecycleViewANDSetAdapter
 <pre><code>
-    spinner.setPopulateRecycleViewANDSetAdapter(AdapterCustomized(list))
+  spinner.setPopulateRecycleViewANDSetAdapter(AdapterCustomized(list))
 </code></pre>
 </br>
 </br>

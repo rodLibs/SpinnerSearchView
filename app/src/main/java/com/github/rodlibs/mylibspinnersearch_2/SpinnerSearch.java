@@ -72,13 +72,13 @@ public class SpinnerSearch extends LinearLayout {
 
 
         textViewTitle = new TextView(mContext, mAttrs);
-        textViewTitle.setText("Selecione um item.");
+        textViewTitle.setText("Selecione um item");
         textViewTitle.setTextSize(TypedValue.COMPLEX_UNIT_SP,14);
         textViewTitle.setPadding(16,50,16,50);
         textViewTitle.setTextColor(Color.BLACK);
 
         editTextSearch = new EditText(mContext, mAttrs);
-        editTextSearch.setHint("Refine sua busca.");
+        editTextSearch.setHint("Refine sua busca");
         editTextSearch.setTextColor(Color.GRAY);
         editTextSearch.setHintTextColor(Color.GRAY);
         editTextSearch.setTextSize(TypedValue.COMPLEX_UNIT_SP,14);
@@ -107,7 +107,7 @@ public class SpinnerSearch extends LinearLayout {
         imageViewArrow.setLayoutParams(paramsImageView);
 
         recycleView = new RecyclerView(mContext, mAttrs);
-        LayoutParams paramsRecycle = new LayoutParams(LayoutParams.MATCH_PARENT, 500);
+        LayoutParams paramsRecycle = new LayoutParams(LayoutParams.MATCH_PARENT, 450);
         recycleView.setLayoutParams(paramsRecycle);
         recycleView.setVisibility(GONE);
 
@@ -293,6 +293,16 @@ public class SpinnerSearch extends LinearLayout {
             editTextSearch.setBackgroundTintList(colorStateList);
         }
     }
+    public void setComponentDrawable(Drawable img){
+        if (img != null) {
+            img.setBounds(0, 0, 60, 60);
+            editTextSearch.setCompoundDrawables(img, null, null, null);
+            editTextSearch.setCompoundDrawablePadding(16);
+        }else {
+            editTextSearch.setCompoundDrawables(null, null, null, null);
+            editTextSearch.setCompoundDrawablePadding(0);
+        }
+    }
 
 
     /**
@@ -304,5 +314,16 @@ public class SpinnerSearch extends LinearLayout {
     }
     public void setBitmapImageView(Bitmap bitmap){
         imageViewArrow.setImageBitmap(bitmap);
+    }
+
+
+    /**
+     * @Method for changing the RecycleView size component
+     */
+    public void setSizeRecycleView(int size){
+        if (size >= 100) {
+            LayoutParams paramsRecycle = new LayoutParams(LayoutParams.MATCH_PARENT, size);
+            recycleView.setLayoutParams(paramsRecycle);
+        }
     }
 }

@@ -49,7 +49,7 @@ repositories {
 
 #### Gradle:
 <pre><code>
-    implementation 'com.github.rodlibs:spinnerSearch2:1.3'
+    implementation 'com.github.rodlibs:spinnerSearch2:1.4'
 </code></pre>
 
 
@@ -58,7 +58,7 @@ repositories {
  <dependency>
   <groupId>com.github.rodlibs</groupId>
   <artifactId>spinnerSearch2</artifactId>
-  <version>1.3</version>
+  <version>1.4</version>
   <type>pom</type>
 </dependency>
 ```
@@ -203,6 +203,11 @@ class AdapterCustomized(private val listOrigi: List<String>) : BaseAdapter() {
   setBackgroundTintListEditText(ColorStateList colorStateList)  -->> set backgroundTintList camp search
 </code></pre>
 
+<pre><code>
+  setComponentDrawable(Drawable drawable)  -->> set CompoundDrawable camp search, passing a drawable or passing null.
+</code></pre>
+
+
 ###### ImageView
 <pre><code>
   setImageResourceImageView(int res)  -->> set ImageResource ImageView
@@ -210,6 +215,13 @@ class AdapterCustomized(private val listOrigi: List<String>) : BaseAdapter() {
 
 <pre><code>
   setBitmapImageView(Bitmap bitmap)  -->> set ImageBitmap ImageView
+</code></pre>
+
+
+
+###### RecycleView
+<pre><code>
+  setSizeRecycleView(int size)  -->> set size recycleView for height.
 </code></pre>
 </br>
 </br>

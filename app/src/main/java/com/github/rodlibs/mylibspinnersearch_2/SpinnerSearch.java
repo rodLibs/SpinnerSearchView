@@ -315,6 +315,9 @@ public class SpinnerSearch extends LinearLayout {
     public void setBitmapImageView(Bitmap bitmap){
         imageViewArrow.setImageBitmap(bitmap);
     }
+    public void setSizeImageView(LayoutParams paramsImageView){
+        imageViewArrow.setLayoutParams(paramsImageView);
+    }
 
 
     /**

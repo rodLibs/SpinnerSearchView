@@ -74,7 +74,7 @@ public class SpinnerSearch extends LinearLayout {
         textViewTitle = new TextView(mContext, mAttrs);
         textViewTitle.setText("Selecione um item");
         textViewTitle.setTextSize(TypedValue.COMPLEX_UNIT_SP,14);
-        textViewTitle.setPadding(16,50,16,50);
+        textViewTitle.setPadding(16,35,16,35);
         textViewTitle.setTextColor(Color.BLACK);
 
         editTextSearch = new EditText(mContext, mAttrs);
@@ -83,7 +83,7 @@ public class SpinnerSearch extends LinearLayout {
         editTextSearch.setHintTextColor(Color.GRAY);
         editTextSearch.setTextSize(TypedValue.COMPLEX_UNIT_SP,14);
         editTextSearch.setSingleLine(true);
-        editTextSearch.setPadding(10,40,16,40);
+        editTextSearch.setPadding(10,34,16,34);
 
         //TODO: lançar exeções
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -100,7 +100,7 @@ public class SpinnerSearch extends LinearLayout {
 
         imageViewArrow = new ImageView(mContext, mAttrs);
         imageViewArrow.setBackgroundResource(R.drawable.ic_arrow_down);
-        LayoutParams paramsImageView = new LayoutParams(60, 60);
+        LayoutParams paramsImageView = new LayoutParams(45, 45);
         paramsImageView.rightMargin = 30;
         paramsImageView.leftMargin = 20;
         paramsImageView.weight = 0.0f;

@@ -126,7 +126,12 @@ dependencies {
 }
 
 
+
+
 /*
+links: https://nglauber.medium.com/publicando-sua-biblioteca-android-no-github-packages-c9d234dbc7b6
+       https://dev.to/mohitrajput987/publish-android-library-using-github-packages-4lnf
+
     Depois de ter subido uma package para o gitHub
     Vai no site do jitpack: https://jitpack.io , loga com o git
     escolhe o repositório e vai ta lá a dependencia

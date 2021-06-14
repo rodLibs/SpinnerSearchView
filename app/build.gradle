@@ -11,7 +11,7 @@ githubProperties.load(new FileInputStream(rootProject.file("github.properties"))
 //}
 
 def getVersionName = { ->
-    return "1.4"
+    return "1.5"
 }
 
 // Add the name of your library here

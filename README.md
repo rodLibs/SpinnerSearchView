@@ -37,9 +37,7 @@ The Gradle dependency is available via Maven. Maven is the default Maven reposit
 ## Add repository
 <pre><code>
 repositories {
-    maven {
-            url  "https://dl.bintray.com/rod120/spinnerSearch2"
-        }
+    maven { url 'https://jitpack.io' } 
 }
 </code></pre>
 
@@ -49,20 +47,9 @@ repositories {
 
 #### Gradle:
 <pre><code>
-    implementation 'com.github.rodlibs:spinnerSearch2:1.4'
+    implementation 'com.github.rodLibs:SpinnerSearchView:master-SNAPSHOT'
 </code></pre>
 
-
-#### Maven:
-```xml
- <dependency>
-  <groupId>com.github.rodLibs</groupId>
-  <artifactId>spinnerSearch2</artifactId>
-  <version>1.4</version>
-  <type>pom</type>
-</dependency>
-```
-</br>
 </br>
 
 

@@ -56,7 +56,7 @@ repositories {
 #### Maven:
 ```xml
  <dependency>
-  <groupId>com.github.rodlibs</groupId>
+  <groupId>com.github.rodLibs</groupId>
   <artifactId>spinnerSearch2</artifactId>
   <version>1.4</version>
   <type>pom</type>

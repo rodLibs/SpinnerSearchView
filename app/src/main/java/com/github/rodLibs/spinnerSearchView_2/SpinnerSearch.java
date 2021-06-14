@@ -1,4 +1,4 @@
-package com.github.rodlibs.mylibspinnersearch_2;
+package com.github.rodLibs.spinnerSearchView_2;
 
 import android.content.Context;
 import android.content.res.ColorStateList;
@@ -21,9 +21,9 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
-import com.github.rodlibs.mylibspinnersearch_2.adapter.AdapterSpinnerSearch;
-import com.github.rodlibs.mylibspinnersearch_2.adapter.BaseAdapter;
-import com.github.rodlibs.mylibspinnersearch_2.listener.OnItemClickSpinnerSearch;
+import com.github.rodLibs.spinnerSearchView_2.adapter.AdapterSpinnerSearch;
+import com.github.rodLibs.spinnerSearchView_2.adapter.BaseAdapter;
+import com.github.rodLibs.spinnerSearchView_2.listener.OnItemClickSpinnerSearch;
 
 
 public class SpinnerSearch extends LinearLayout {

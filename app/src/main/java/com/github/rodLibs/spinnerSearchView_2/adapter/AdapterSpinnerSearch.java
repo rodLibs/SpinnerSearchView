@@ -1,4 +1,4 @@
-package com.github.rodlibs.mylibspinnersearch_2.adapter;
+package com.github.rodLibs.spinnerSearchView_2.adapter;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -14,8 +14,8 @@ import androidx.annotation.NonNull;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.github.rodlibs.mylibspinnersearch_2.R;
-import com.github.rodlibs.mylibspinnersearch_2.listener.OnItemClickSpinnerSearch;
+import com.github.rodLibs.spinnerSearchView_2.R;
+import com.github.rodLibs.spinnerSearchView_2.listener.OnItemClickSpinnerSearch;
 
 /**
  * Created by rodd on 03/08/2020.

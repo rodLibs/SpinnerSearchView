@@ -1,9 +1,9 @@
-package com.github.rodlibs.mylibspinnersearch_2.adapter;
+package com.github.rodLibs.spinnerSearchView_2.adapter;
 
 import android.widget.Filterable;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.github.rodlibs.mylibspinnersearch_2.listener.OnItemClickSpinnerSearch;
+import com.github.rodLibs.spinnerSearchView_2.listener.OnItemClickSpinnerSearch;
 
 
 /**
